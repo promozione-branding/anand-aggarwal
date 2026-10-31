@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { toast } from "react-toastify";
+import { handleCallClick } from "@/utils/tracking";
 
 // import { RecaptchaVerifier, signInWithPhoneNumber } from "firebase/auth";
 // import { auth } from "@/utils/firebase";
@@ -222,8 +223,9 @@ export default function ContactSection() {
               <div className="mt-3 grid text-md text-black">
                 <p className="font-bold">
                   <span className="font-bold">Mobile:</span>{" "}
-                  <a
-                    href="tel:+919810327243"
+                 <a
+  href="tel:+919810327243"
+  onClick={() => handleCallClick({ source: "Website" })}
                     className="hover:text-[#ED3A20] transition"
                   >
                     +91 9810327243
@@ -231,6 +233,7 @@ export default function ContactSection() {
                   {" , "}
                   <a
                     href="tel:+919891683399"
+                     onClick={() => handleCallClick({ source: "Website" })}
                     className="hover:text-[#ED3A20] transition"
                   >
                     +91 9891683399

@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import axios from "axios";
+import { handleCallClick } from "@/utils/tracking";
 
 
 
@@ -238,6 +239,7 @@ export default function ContactSection() {
                     <span className="font-bold">Mobile:</span>{" "}
                     <a
                       href="tel:+919810395051"
+                       onClick={() => handleCallClick({ source: "Website" })}
                       className="hover:text-[#ED3A20] transition"
                     >
                       +91 9810395051
@@ -245,6 +247,7 @@ export default function ContactSection() {
                     {" "},{" "}
                     <a
                       href="tel:+919891683399"
+                       onClick={() => handleCallClick({ source: "Website" })}
                       className="hover:text-[#ED3A20] transition"
                     >
                       +91 9891683399

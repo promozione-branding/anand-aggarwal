@@ -7,6 +7,7 @@ import Link from "next/link";
 import CitySection from "@/components/CitySection";
 import ServicesMarquee from "@/components/Marquee";
 import ContactForm from "@/components/Form";
+import { handleWhatsappClick } from "@/utils/tracking";
 
 export default function CityPage() {
     const params = useParams();
@@ -684,12 +685,13 @@ export default function CityPage() {
                                     {exp.subtitle}
                                 </p>
 
-                                <Link
-                                    href="https://wa.me/+919810395051"
-                                    className="mt-2 inline-block rounded-full text-white bg-[#ED3A20] px-4 py-1.5 text-xs font-semibold hover:bg-red-700 transition"
-                                >
-                                    Know More
-                                </Link>
+                               <Link
+  href="https://wa.me/+919810395051"
+  onClick={() => handleWhatsappClick({ obj: { name: exp.title }, source: "Website" })}
+  className="mt-2 inline-block rounded-full text-white bg-[#ED3A20] px-4 py-1.5 text-xs font-semibold hover:bg-red-700 transition"
+>
+  Know More
+</Link>
                             </div>
                         </div>
                     ))}

@@ -1,7 +1,7 @@
 
 import PropertyCarousel from "@/components/Carousel";
-
-
+import TrackedCallLink from "@/components/TrackedCallLink";
+import { handleCallClick } from "@/utils/tracking";
 
 export const metadata = {
   title: "About Us | Experts Pre-Leased Properties in Delhi",
@@ -316,12 +316,13 @@ export default function AboutPage() {
           Share a few details with us and our team will connect with a
           structured, no-obligation discussion on suitable options.
         </p>
-        <a
-          href="tel:+919810759498"
-          className="mt-6 inline-flex items-center rounded-full bg-[#ED3A20] px-9 py-3 text-sm sm:text-base font-semibold text-white shadow-md hover:bg-[#c73019] transition"
-        >
-          Schedule a Call
-        </a>
+       <TrackedCallLink
+  href="tel:+919810759498"
+   onClick={() => handleCallClick({ source: "Website" })}
+  className="mt-6 inline-flex items-center rounded-full bg-[#ED3A20] px-9 py-3 text-sm sm:text-base font-semibold text-white shadow-md hover:bg-[#c73019] transition"
+>
+  Schedule a Call
+</TrackedCallLink>
       </section>
 
 

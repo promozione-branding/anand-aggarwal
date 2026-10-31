@@ -1,42 +1,35 @@
-// WhatsAppChat.jsx
+"use client";
+
+import { handleWhatsappClick , handleCallClick} from "@/utils/tracking";
 import React from "react";
 import { FaWhatsapp } from "react-icons/fa";
 import { FaPhoneAlt } from "react-icons/fa";
 
 const Whatsapp = () => {
   return (
-
     <>
-
-
       <a
         href="https://wa.me/+919810327243"
         className="whatsapp-float animate-bounce"
-
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Chat on WhatsApp with Promozione Branding"
+        onClick={() => handleWhatsappClick({ source: "Website" })}
       >
         <FaWhatsapp size={31} />
       </a>
+
       <div className="">
-
-
         <a
           href="tel:+919810327243"
           className="call-float animate-bounce"
           aria-label="Call Promozione Branding"
+          onClick={() => handleCallClick({ source: "Website" })}
         >
           <FaPhoneAlt className="" size={29} />
         </a>
       </div>
-
     </>
-
-
-
-
-
   );
 };
 
