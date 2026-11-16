@@ -22,11 +22,11 @@ export default function ContactSection() {
     e.preventDefault();
     setStatus("Sending...");
     setLoading(true);
-
+    const webisteUrl = window.location.hostname + window.location.pathname
     try {
       const formData = {
         supplierToken: "6a9bdc7779bd32ac5164a497",
-        platform: "Real Estate Website",
+        platform: webisteUrl || "Real Estate Website",
         platformEmail: "anandaggarwalproperties1@gmail.com",
         name,
         phone,
@@ -199,8 +199,8 @@ export default function ContactSection() {
                   {status && (
                     <p
                       className={`text-xs sm:text-sm font-medium ${status.startsWith("✅")
-                          ? "text-green-600"
-                          : "text-red-600"
+                        ? "text-green-600"
+                        : "text-red-600"
                         }`}
                     >
                       {status}
@@ -239,7 +239,7 @@ export default function ContactSection() {
                     <span className="font-bold">Mobile:</span>{" "}
                     <a
                       href="tel:+919810395051"
-                       onClick={() => handleCallClick({ source: "Website" })}
+                      onClick={() => handleCallClick({ source: "Website" })}
                       className="hover:text-[#ED3A20] transition"
                     >
                       +91 9810395051
@@ -247,7 +247,7 @@ export default function ContactSection() {
                     {" "},{" "}
                     <a
                       href="tel:+919891683399"
-                       onClick={() => handleCallClick({ source: "Website" })}
+                      onClick={() => handleCallClick({ source: "Website" })}
                       className="hover:text-[#ED3A20] transition"
                     >
                       +91 9891683399

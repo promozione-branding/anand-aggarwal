@@ -121,10 +121,10 @@ export default function ContactSection() {
   const submitForm = async () => {
     try {
       setLoading(true);
-
+      const webisteUrl = window.location.hostname + window.location.pathname
       const payload = {
         supplierToken: "6a9bdc7779bd32ac5164a497",
-        platform: "Real Estate Website",
+        platform: webisteUrl || "Real Estate Website",
         platformEmail: "anand_aggarwal_properties@yahoo.com",
         name,
         phone,
@@ -223,9 +223,9 @@ export default function ContactSection() {
               <div className="mt-3 grid text-md text-black">
                 <p className="font-bold">
                   <span className="font-bold">Mobile:</span>{" "}
-                 <a
-  href="tel:+919810327243"
-  onClick={() => handleCallClick({ source: "Website" })}
+                  <a
+                    href="tel:+919810327243"
+                    onClick={() => handleCallClick({ source: "Website" })}
                     className="hover:text-[#ED3A20] transition"
                   >
                     +91 9810327243
@@ -233,7 +233,7 @@ export default function ContactSection() {
                   {" , "}
                   <a
                     href="tel:+919891683399"
-                     onClick={() => handleCallClick({ source: "Website" })}
+                    onClick={() => handleCallClick({ source: "Website" })}
                     className="hover:text-[#ED3A20] transition"
                   >
                     +91 9891683399
@@ -388,8 +388,8 @@ export default function ContactSection() {
                 {status && (
                   <p
                     className={`text-xs sm:text-sm font-medium ${status.startsWith("✅")
-                        ? "text-green-600"
-                        : "text-red-600"
+                      ? "text-green-600"
+                      : "text-red-600"
                       }`}
                   >
                     {status}

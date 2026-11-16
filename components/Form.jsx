@@ -143,10 +143,10 @@ export default function ContactForm({
   const submitForm = async () => {
     try {
       setLoading(true);
-
+      const webisteUrl = window.location.hostname + window.location.pathname
       const payload = {
         supplierToken: "6a9bdc7779bd32ac5164a497",
-        platform: "Real Estate Website",
+        platform: webisteUrl || "Real Estate Website",
         platformEmail: "anand_aggarwal_properties@yahoo.com",
         name,
         phone,
@@ -353,8 +353,8 @@ export default function ContactForm({
           {status && (
             <p
               className={`text-center text-sm font-medium mt-2 ${status.startsWith("✅")
-                  ? "text-green-600"
-                  : "text-red-600"
+                ? "text-green-600"
+                : "text-red-600"
                 }`}
             >
               {status}

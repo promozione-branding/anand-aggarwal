@@ -145,11 +145,11 @@ export default function Inquiry() {
     e.preventDefault();
     setStatus("Sending...");
     setLoading(true);
-
+    const webisteUrl = window.location.hostname + window.location.pathname
     try {
       const formData = {
         supplierToken: "6a9bdc7779bd32ac5164a497",
-        platform: "Real Estate Landing Page",
+        platform: webisteUrl || "Real Estate Landing Page",
         platformEmail: "anandaggarwalproperties1@gmail.com",
         name,
         phone,
@@ -445,8 +445,8 @@ export default function Inquiry() {
 
                         <div className="flex flex-col md:flex-row items-center lg:items-start gap-4 mt-6">
                           <Link
-  href="tel:+919810327243"
-  onClick={() => handleCallClick({ source: "Website" })}
+                            href="tel:+919810327243"
+                            onClick={() => handleCallClick({ source: "Website" })}
                             className="group inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-red-600 to-red-800 px-6 md:px-8 py-3 text-sm md:text-base font-semibold text-white shadow-lg hover:scale-105 transition-all duration-300"
                           >
                             Contact Now
@@ -664,10 +664,10 @@ export default function Inquiry() {
                   and first-time investors.
                 </span>
               </p>
-          <Link
-  href="https://wa.me/+919810327243"
-  target="_blank"
-  onClick={() => handleWhatsappClick({ source: "Website" })}
+              <Link
+                href="https://wa.me/+919810327243"
+                target="_blank"
+                onClick={() => handleWhatsappClick({ source: "Website" })}
                 className="mt-5 inline-flex items-center gap-2 rounded-full bg-[#bb2f2a] cursor-pointer px-8 py-3 text-white font-medium shadow-md hover:bg-red-700 transition"
               >
                 Contact Us <ArrowRight />
@@ -829,7 +829,7 @@ export default function Inquiry() {
             <a
               href="https://wa.me/+919810327243"
               target="_blank"
-                onClick={() => handleWhatsappClick({ source: "Website" })}
+              onClick={() => handleWhatsappClick({ source: "Website" })}
               className="mt-6 inline-flex items-center gap-2 bg-[#bb2f2a] px-8 py-3 text-white rounded-full text-sm font-semibold hover:bg-red-700 transition"
             >
               Discuss Your Project <ArrowRight size={16} />
@@ -1009,7 +1009,7 @@ export default function Inquiry() {
 
             <a
               href="tel:+919810327243"
-               onClick={() => handleCallClick({ source: "Website" })}
+              onClick={() => handleCallClick({ source: "Website" })}
               className="inline-flex items-center rounded-full bg-white px-9 py-3 text-sm sm:text-base font-semibold text-black shadow-md animate-pulse transition whitespace-nowrap"
             >
               Schedule a Call

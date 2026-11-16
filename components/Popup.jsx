@@ -130,10 +130,10 @@ export default function ContactForm({
   const submitForm = async () => {
     try {
       setLoading(true);
-
+      const webisteUrl = window.location.hostname + window.location.pathname
       const payload = {
         supplierToken: "6a9bdc7779bd32ac5164a497",
-        platform: "Real Estate Website",
+        platform: webisteUrl || "Real Estate Website",
         platformEmail: "anand_aggarwal_properties@yahoo.com",
         name,
         phone,

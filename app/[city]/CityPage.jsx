@@ -178,11 +178,11 @@ export default function CityPage() {
         e.preventDefault();
         setStatus("Sending...");
         setLoading(true);
-
+        const webisteUrl = window.location.hostname + window.location.pathname
         try {
             const formData = {
                 supplierToken: "6a9bdc7779bd32ac5164a497",
-                platform: "Real Estate Website landing page",
+                platform: webisteUrl || "Real Estate Website landing page",
                 platformEmail: "anandaggarwalproperties1@gmail.com",
                 name,
                 phone,
@@ -685,13 +685,13 @@ export default function CityPage() {
                                     {exp.subtitle}
                                 </p>
 
-                               <Link
-  href="https://wa.me/+919810395051"
-  onClick={() => handleWhatsappClick({ obj: { name: exp.title }, source: "Website" })}
-  className="mt-2 inline-block rounded-full text-white bg-[#ED3A20] px-4 py-1.5 text-xs font-semibold hover:bg-red-700 transition"
->
-  Know More
-</Link>
+                                <Link
+                                    href="https://wa.me/+919810395051"
+                                    onClick={() => handleWhatsappClick({ obj: { name: exp.title }, source: "Website" })}
+                                    className="mt-2 inline-block rounded-full text-white bg-[#ED3A20] px-4 py-1.5 text-xs font-semibold hover:bg-red-700 transition"
+                                >
+                                    Know More
+                                </Link>
                             </div>
                         </div>
                     ))}

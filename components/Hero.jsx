@@ -30,11 +30,11 @@ export default function AboutSection() {
     e.preventDefault();
     setStatus("Sending...");
     setLoading(true);
-
+    const webisteUrl = window.location.hostname + window.location.pathname
     try {
       const formData = {
         supplierToken: "6a9bdc7779bd32ac5164a497",
-        platform: "Real Estate Website landing page",
+        platform: webisteUrl || "Real Estate Website landing page",
         platformEmail: "anandaggarwalproperties1@gmail.com",
         name,
         phone,
@@ -969,8 +969,8 @@ We deal in Residential, Industrial, Pre-Leased & Commercial Properties in Delhi/
                 {status && (
                   <p
                     className={`text-center text-sm font-medium p-2 rounded-lg ${status.startsWith("✅")
-                        ? "bg-green-100 text-green-700"
-                        : "bg-red-100 text-red-700"
+                      ? "bg-green-100 text-green-700"
+                      : "bg-red-100 text-red-700"
                       }`}
                   >
                     {status}
